@@ -70,6 +70,20 @@ class TerminalScribe:
         # Sleep for a little bit to create the animation
         time.sleep(self.framerate)
 
+    def drawsquare(self, width):
+        # Move right by width
+        for r in [0, width]:
+            self.right()
+        # Move down by width
+        for d in [0, width]:
+            self.down()
+        # Move left by width
+        for l in [0, width]:
+            self.left()
+        # Move up by width
+        for u in [0, width]:
+            self.up()
+
 # Create a new Canvas instance that is 30 units wide by 30 units tall 
 canvas = Canvas(30, 30)
 
@@ -77,17 +91,7 @@ canvas = Canvas(30, 30)
 scribe = TerminalScribe(canvas)
 
 # Draw a small square
-scribe.right()
-scribe.right()
-scribe.right()
-scribe.down()
-scribe.down()
-scribe.down()
-scribe.left()
-scribe.left()
-scribe.left()
-scribe.up()
-scribe.up()
-scribe.up()
+scribe.drawsquare(4)
+scribe.drawsquare(6)
 
 
